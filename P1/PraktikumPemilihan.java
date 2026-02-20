@@ -7,7 +7,6 @@ public class PraktikumPemilihan {
         System.out.println("Program Menghitung Nilai Akhir");
         System.out.println("========================");
 
-        // Input Nilai
         System.out.print("Masukkan Nilai Tugas: ");
         int tugas = resya.nextInt();
         System.out.print("Masukkan Nilai Kuis: ");
@@ -20,19 +19,16 @@ public class PraktikumPemilihan {
         System.out.println("========================");
         System.out.println("========================");
 
-        // Validasi Nilai 0-100 [cite: 16]
         if ((tugas < 0 || tugas > 100) || (kuis < 0 || kuis > 100) || 
             (uts < 0 || uts > 100) || (uas < 0 || uas > 100)) {
             System.out.println("nilai tidak valid");
             System.out.println("========================");
         } else {
-            // Perhitungan Nilai Akhir [cite: 15]
             double nilaiAkhir = (0.2 * tugas) + (0.2 * kuis) + (0.3 * uts) + (0.4 * uas);
             
             String nilaiHuruf;
             String kualifikasi;
 
-            // Konversi Nilai [cite: 18]
             if (nilaiAkhir > 80 && nilaiAkhir <= 100) {
                 nilaiHuruf = "A";
                 kualifikasi = "LULUS";
@@ -60,7 +56,6 @@ public class PraktikumPemilihan {
             System.out.println("Nilai Huruf : " + nilaiHuruf);
             System.out.println("========================");
             
-            // Output Keterangan Lulus/Tidak [cite: 19, 20]
             if (kualifikasi.equals("LULUS")) {
                 System.out.println("SELAMAT ANDA LULUS");
             } else {

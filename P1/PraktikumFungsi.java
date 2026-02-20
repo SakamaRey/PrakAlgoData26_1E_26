@@ -1,10 +1,10 @@
 public class PraktikumFungsi {
     
     static int[][] stockBunga = {
-        {10, 5, 15, 7},  // RoyalGarden 1
-        {6, 11, 9, 12},  // RoyalGarden 2
-        {2, 10, 10, 5},  // RoyalGarden 3
-        {5, 7, 12, 9}    // RoyalGarden 4
+        {10, 5, 15, 7},  
+        {6, 11, 9, 12},  
+        {2, 10, 10, 5},  
+        {5, 7, 12, 9}    
     };
 
     static int[] hargaBunga = {75000, 50000, 60000, 10000};
@@ -32,7 +32,6 @@ public class PraktikumFungsi {
         return total;
     }
 
-    // Fungsi cek status kelayakan [cite: 141, 142, 143]
     static String cekStatus(int pendapatan) {
         if (pendapatan > 1500000) {
             return "Sangat Baik";

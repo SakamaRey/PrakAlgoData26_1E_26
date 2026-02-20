@@ -5,7 +5,6 @@ public class IPsemester {
     public static void main(String[] args) {
         Scanner resya = new Scanner(System.in);
 
-        // Definisi Mata Kuliah sesuai contoh [cite: 76-83]
         String[] matkul = {
             "Pancasila", 
             "Konsep Teknologi Informasi", 
@@ -25,12 +24,10 @@ public class IPsemester {
         System.out.println("Program Menghitung IP Semester");
         System.out.println("==================================");
         
-        // Input Nilai
         for (int i = 0; i < matkul.length; i++) {
             System.out.print("masukkan nilai Angka untuk MK " + matkul[i] + ": ");
             nilaiAngka[i] = resya.nextDouble();
             
-            // Konversi ke Nilai Huruf dan Nilai Setara [cite: 71]
             if (nilaiAngka[i] > 80 && nilaiAngka[i] <= 100) {
                 nilaiHuruf[i] = "A"; nilaiSetara[i] = 4.0;
             } else if (nilaiAngka[i] > 73 && nilaiAngka[i] <= 80) {
@@ -52,11 +49,9 @@ public class IPsemester {
         System.out.println("hasil Konversi Nilai");
         System.out.println("==================================");
         
-        // Menampilkan Hasil dan Menghitung IP
         double totalNilaiSetaraKaliSks = 0;
         double totalSks = 0;
         
-        // Header Tabel Sederhana
         System.out.printf("%-40s %-12s %-12s %-12s\n", "MK", "Nilai Angka", "Nilai Huruf", "Bobot Nilai");
         
         for (int i = 0; i < matkul.length; i++) {
@@ -65,7 +60,7 @@ public class IPsemester {
             totalSks += sks[i];
         }
         
-        double ipSemester = totalNilaiSetaraKaliSks / totalSks; // [cite: 69]
+        double ipSemester = totalNilaiSetaraKaliSks / totalSks; 
         
         System.out.println("==================================");
         System.out.printf("IP : %.2f\n", ipSemester);
