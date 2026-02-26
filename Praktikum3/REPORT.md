@@ -45,3 +45,7 @@ Soal :
 2. <img width="624" height="309" alt="image" src="https://github.com/user-attachments/assets/3dc0ade2-f122-4afd-aac5-c2b996e4a866" />
 
 Hasil Running :
+1. <img width="632" height="707" alt="image" src="https://github.com/user-attachments/assets/5e4d2b80-d549-42a7-b34f-261473afa1d4" />
+2. <img width="369" height="713" alt="image" src="https://github.com/user-attachments/assets/b9ffc16b-5b54-447b-807c-c4b00be9fb6b" />
+   <img width="431" height="638" alt="image" src="https://github.com/user-attachments/assets/0ad71b99-ac74-4e81-83ee-59492fc49ec5" />
+
