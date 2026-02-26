@@ -42,5 +42,11 @@ public class DosenDemo26 {
             System.out.println("--------------------------------------------");
             counter++;
         }
+
+        DataDosen26.dataSemuaDosen26(arrayOfDosen26);
+        DataDosen26.jumlahDosenPerJenisKelamin26(arrayOfDosen26);
+        DataDosen26.rerataUsiaDosenPerJenisKelamin(arrayOfDosen26);
+        DataDosen26.infoDosenPalingTua(arrayOfDosen26);
+        DataDosen26.infoDosenPalingMuda(arrayOfDosen26);
     }
 }
