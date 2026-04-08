@@ -20,21 +20,29 @@ public class MahasiswaDemo26 {
 
         for (int i = 0; i < list.listMhs.length; i++) {
             System.out.println("Masukkan Data Mahasiswa ke-" + (i+1));
-            System.out.print("NIM: "); String nim = resya.nextLine();
-            System.out.print("Nama: "); String nama = resya.nextLine();
-            System.out.print("Kelas: "); String kelas = resya.nextLine();
-            System.out.print("IPK: "); double ipk = resya.nextDouble();
+            System.out.print("NIM: ");
+            String nim = resya.nextLine();
+            System.out.print("Nama: ");
+            String nama = resya.nextLine();
+            System.out.print("Kelas: ");
+            String kelas = resya.nextLine();
+            System.out.print("IPK: ");
+            double ipk = resya.nextDouble();
             resya.nextLine();
-            
+
             Mahasiswa26 m = new Mahasiswa26(nim, nama, kelas, ipk);
             list.tambah(m);
         }
-
+        
         System.out.println("Data Mahasiswa sebelum sorting: ");
         list.tampil();
 
         System.out.println("Data Mahasiwa setelah sorting berdasarkan IPK (DESC) : ");
         list.bubbleSort();
+        list.tampil();
+
+        System.out.println("Data Mahasiwa setelah sorting berdasarkan SELECTION SORT (ASC) : ");
+        list.selectionSort();
         list.tampil();
     }
 }
