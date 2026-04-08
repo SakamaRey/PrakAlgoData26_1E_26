@@ -6,7 +6,9 @@ public class MahasiswaDemo26 {
     public static void main(String[] args) {
         Scanner resya = new Scanner(System.in);
         MahasiwaBerprestasi26 list = new MahasiwaBerprestasi26();
-        int jumMhs=5;
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumMhs=resya.nextInt();
+        resya.nextLine();
         // Mahasiswa26 m1 = new Mahasiswa26("123", "Zidan", "2A", 3.2);
         // Mahasiswa26 m2 = new Mahasiswa26("124", "Ayu", "2A", 3.5);
         // Mahasiswa26 m3 = new Mahasiswa26("125", "Sofi", "2A", 3.1);
