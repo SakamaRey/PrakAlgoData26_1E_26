@@ -1,10 +1,10 @@
-# Laporan Praktikum 5 - Sorting
+# Laporan Praktikum 5 - Sorting & Praktikum 6 SEARCHING
 
 <h4>Nama : Resya Fajar Putra Pratama<h4>
 <h4>NIM : 254107020124<h4>
 <h4>Kelas : TI-1E<h4>
 
-## 5.2 Percobaan 2: Mengimplementasikan Sorting menggunakan object
+## 5.2 Percobaan 1: Mengimplementasikan Sorting menggunakan object
 Soal : 
 <img width="319" height="178" alt="image" src="https://github.com/user-attachments/assets/fcb14d99-d0db-4286-9b64-dae480e19ffe" />
 
@@ -41,3 +41,33 @@ Jawaban :
 <img width="478" height="957" alt="image" src="https://github.com/user-attachments/assets/825e18c3-eb03-4452-8432-7fce08d92292" />
 <img width="577" height="959" alt="image" src="https://github.com/user-attachments/assets/9d695602-dbfe-4542-abfe-68be2283a243" />
 <img width="544" height="811" alt="image" src="https://github.com/user-attachments/assets/d7399280-53c4-433f-b958-1ed7a7388587" />
+
+## 6.2 Percobaan 1: Searching/ Pencarian Menggunakan Algoritma Sequential Search
+Soal :
+<img width="542" height="289" alt="image" src="https://github.com/user-attachments/assets/a640af9d-c77f-4a34-b2d1-627b2a2e357d" />
+
+Jawaban : 
+1. Method tampilPosisi menampilkan indeks lokasi data yang ditemukan dalam array. sedangkan Method tampilDataSearch menampilkan detail lengkap mahasiswa (NIM, Nama, Kelas, dan IPK) berdasarkan indeks yang ditemukan.
+2. Perintah break menghentikan perulangan (for loop) segera setelah data ditemukan (listMhs[j].ipk == cari), sehingga program lebih efisien karena tidak perlu memeriksa sisa elemen array.
+3. Variabel pos menyimpan indeks array tempat data ditemukan. Nilai ini dikembalikan (return) untuk digunakan method lain dalam mengakses objek secara spesifik, misalnya untuk menampilkan data. Jika data tidak ditemukan, variabel ini menyimpan nilai -1 sebagai penanda.
+4. Program akan menampilkan data pertama yang ia temukan. Hal ini dikarenakan algoritma melakukan pencarian secara berurutan dari indeks awal (j = 0) , dan ketika menemukan data yang cocok pertama kali, perintah break akan langsung menghentikan perulangan.
+5. Tanpa break, perulangan akan memeriksa seluruh elemen array hingga akhir meskipun data sudah ditemukan. Jika terdapat lebih dari satu data dengan IPK yang sama, variabel posisi akan terus diperbarui, sehingga hasilnya menunjukkan posisi data terakhir yang cocok.
+
+## 6.3 Percobaan 2: Searching/ Pencarian Menggunakan Algoritma Binary Search
+Soal : 
+<img width="551" height="291" alt="image" src="https://github.com/user-attachments/assets/866cccc6-8e9a-4e4f-b8cc-77553436e908" />
+
+Jawaban : 
+1. Proses divide (pembagian area pencarian) dijalankan pada baris kode yang mencari nilai tengah (mid), yaitu:
+<img width="232" height="20" alt="image" src="https://github.com/user-attachments/assets/de43f149-76bf-43cc-84dc-d1784fb8ce05" />
+2. Proses conquer (penaklukan sub-masalah secara rekursif) dijalankan pada baris pemanggilan method itu sendiri (rekursi) untuk mencari ke sisi kiri atau sisi kanan, yaitu:
+<img width="373" height="62" alt="image" src="https://github.com/user-attachments/assets/5a94936a-77e5-4b6a-8a04-8eeba290c8ad" />
+3. - left: Menyimpan indeks batas paling kiri (awal) dari area array yang sedang dicari.
+   - right: Menyimpan indeks batas paling kanan (akhir) dari area array yang sedang dicari.
+   - mid: Menyimpan indeks nilai tengah dari area pencarian yang digunakan sebagai titik pivot atau pembanding utama pada iterasi/rekursi tersebut.
+4. Program tetap berjalan tanpa error, tetapi hasil pencarian menjadi tidak valid. Binary Search memerlukan data terurut (Ascending/Descending) karena algoritmanya mengeliminasi setengah area pencarian berdasarkan perbandingan nilai tengah. Tanpa pengurutan, eliminasi area menjadi tidak relevan dan hasil pencarian salah.
+5. Hasilnya tidak sesuai karena kode dirancang untuk urutan Ascending. Pada Ascending, jika nilai tengah lebih besar dari yang dicari (listMhs[mid].ipk > cari), pencarian dilanjutkan ke kiri (mid-1). Untuk Descending, logika perbandingan harus dibalik. Berikut adalah modifikasi untuk data descending :
+<img width="473" height="301" alt="image" src="https://github.com/user-attachments/assets/7c65daa1-83b3-4503-9b23-50fc9ce28f59" />
+6. Binary Search menentukan data tidak ditemukan ketika area pencarian habis, ditandai dengan left > right. Kondisi ini ditangani oleh blok if (right >= left). Jika kondisi bernilai false, program mengeksekusi return -1 sebagai penanda data tidak ditemukan.
+7. Modifikasi program di atas yang mana jumlah mahasiswa yang diinputkan sesuai dengan masukan dari keyboard : 
+<img width="422" height="42" alt="image" src="https://github.com/user-attachments/assets/93d4e8a0-0c03-4b70-a613-1677381433ce" />
