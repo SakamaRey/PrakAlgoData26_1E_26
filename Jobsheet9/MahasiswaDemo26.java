@@ -51,6 +51,16 @@ public class MahasiswaDemo26 {
                     System.out.println("Daftar semua tugas");
                     System.out.println("Nama\tNIM\tKelas");
                     stack.print();
+                    break;
+                case 5:
+                    Mahasiswa26 bawah = stack.peekBottom();
+                    if (bawah != null) {
+                        System.out.println("Tugas pertama dikumpulkan oleh " + bawah.nama);
+                    }
+                    break;
+                case 6:
+                    System.out.println("Jumlah tugas saat ini: " +stack.getJumlahTugas());
+                    break; 
                 default:
                     System.out.println("Pilihan tidak valid");
             }

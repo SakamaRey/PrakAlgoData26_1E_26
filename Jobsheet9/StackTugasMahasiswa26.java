@@ -56,10 +56,29 @@ public class StackTugasMahasiswa26 {
         }
     }
 
+    // Jawaban Soal no 1
     public void print() {
-        for (int i = 0; i <= top; i++) {
+        if (!isEmpty()) {
+        for (int i = top; i >= 0; i--) {
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" +stack[i].kelas);
         }
-        System.out.println("");
+    } else {
+        System.out.println("Stack kosong");
+        }
+    }
+
+    // Jawaban Soal no 4
+    public Mahasiswa26 peekBottom() {
+        if (!isEmpty()) {
+            return stack[0];
+        } else {
+            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan.");
+            return null;
+        }
+    }
+
+    // Jawaban Soal no 5
+    public int getJumlahTugas() {
+        return top + 1;
     }
 }
