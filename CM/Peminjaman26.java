@@ -15,18 +15,23 @@ public class Peminjaman26 {
         hitungDenda();
     }
 
+    // Modifikasi untuk menentukan perbedaan denda buku sesuai dengan Grade Buku
     void hitungDenda() {
         if (lamaPinjam>batasPinjam) {
             terlambat = lamaPinjam - batasPinjam;
-            denda = terlambat*2000;
+            // Logika denda berdasarkan Grade Buku
+            if (buku.status.equalsIgnoreCase("Grade A")) {
+                denda = terlambat * 5000;
+            } else {
+                denda = terlambat * 2000;
+            }
         } else {
             terlambat = 0;
             denda = 0;
         }
     }
-
     void tampilPeminjaman() {
-        System.out.println(mhs.nama + " meminjam " + buku.judul + " | Lama: " + lamaPinjam + 
-        " hari | Terlambat: " + terlambat + " hari | Denda: Rp" + denda);
+        System.out.println(String.format("%-10s | %-15s (%-7s) | Denda: Rp %-6d", 
+        mhs.nama, buku.judul, buku.status, denda));
     }
 }

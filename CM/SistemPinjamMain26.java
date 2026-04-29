@@ -15,10 +15,10 @@ public class SistemPinjamMain26 {
 
         //Inisialisasi Data Buku
         Buku26[] arrBuku = {
-            new Buku26("B001", "Algoritma", 2020),
-            new Buku26("B002", "Basis Data", 2019),
-            new Buku26("B003", "Pemrograman", 2021),
-            new Buku26("B004", "Fisika", 2024)
+            new Buku26("B001", "Algoritma", 2020, "Grade A"),
+            new Buku26("B002", "Basis Data", 2019, "Grade B"),
+            new Buku26("B003", "Pemrograman", 2021, "Grade B"),
+            new Buku26("B004", "Fisika", 2024, "Grade B")
         };
 
         //Inisialisasi Data Peminjaman
@@ -34,10 +34,8 @@ public class SistemPinjamMain26 {
         do {
             System.out.println("\n=== SISTEM PEMINJAMAN BUKU ===");
             System.out.println("1. Tampilkan Mahasiswa");
-            System.out.println("2. Tampilkan Buku");
-            System.out.println("3. Tampilkan Peminjaman");
-            System.out.println("4. Urutkan Berdasarkan Denda (Insertion Sort)");
-            System.out.println("5. Cari Berdasarkan NIM (Binary Search)");
+            System.out.println("2. Pengurutan berdasarkan (Denda (Descending) Nama (Ascending))");
+            System.out.println("3. Cari Berdasarkan NIM");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             menu = resya.nextInt();
@@ -51,48 +49,31 @@ public class SistemPinjamMain26 {
                     }
                     break;
                 case 2:
-                    System.out.println("\n--- Daftar Buku ---");
-                    for (Buku26 b : arrBuku) {
-                        b.tampilBuku();
-                    }
+                    insertionSortDenda(arrPeminjaman);
+                    System.out.println("\nData berhasil diurutkan!");
+                    for (Peminjaman26 p : arrPeminjaman) p.tampilPeminjaman();
                     break;
                 case 3:
-                    System.out.println("\n--- Data Peminjaman ---");
-                    for (Peminjaman26 p : arrPeminjaman) {
-                        p.tampilPeminjaman();
-                    }
+                   System.out.print("Masukkan NIM: ");
+                    String nim = resya.nextLine();
+                    cariBerdasarNIM(arrPeminjaman, nim);
                     break;
-                case 4:
-                    urutBerdasarDenda(arrPeminjaman);
-                    System.out.println("\n--- Data Peminjaman (Diurutkan berdasarkan denda terbesar) ---");
-                    for (Peminjaman26 p : arrPeminjaman) {
-                        p.tampilPeminjaman();
-                    }
-                    break;
-                case 5:
-                    System.out.print("\nMasukkan NIM yang dicari: ");
-                    String cariNIM = resya.nextLine();
-                    System.out.println("Hasil Pencarian:");
-                    cariBerdasarNIM(arrPeminjaman, cariNIM);
-                    break;
-                case 0:
-                    System.out.println("Terima kasih telah menggunakan sistem ini.");
-                    break;    
-                default:
-                    System.out.println("Pilihan tidak valid, silakan coba lagi.");
-            }
+                }
         } while (menu != 0);
 
         resya.close();
     }
 
-    // Menggunakan Insertion Sort (Descending) untuk denda terbesar ke terkecil
-    static void urutBerdasarDenda(Peminjaman26[] arr) {
+    // Soal B
+    // Mengurutkan Denda secara Descending (Dari yang terbesar ke yang terkecil)
+    // Kemudian Mengurutkan Nama Mahasiswa urut secara abjad (Ascending)
+    static void insertionSortDenda(Peminjaman26[] arr) {
         for (int i = 1; i < arr.length; i++) {
             Peminjaman26 key = arr[i];
-            int j = i -1;
-            while (j  >= 0 &&  arr[j].denda < key.denda) { 
-                arr[j+1] = arr[j];
+            int j = i - 1;
+
+            while (j >= 0 && arr[j].denda < key.denda) {
+                arr[j + 1] = arr[j];
                 j--;
             }
             arr[j + 1] = key;
@@ -155,3 +136,4 @@ public class SistemPinjamMain26 {
             }
         }
     }
+// 
