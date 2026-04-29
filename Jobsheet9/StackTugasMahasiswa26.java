@@ -37,12 +37,12 @@ public class StackTugasMahasiswa26 {
     }
 
     public Mahasiswa26 pop() {
-        if (isEmpty()) {
+        if (!isEmpty()) {
             Mahasiswa26 m = stack[top];
             top--;
             return m;
         } else {
-            System.out.println("Stack ksoosng! Tidak ada tugas untuk dinilai.");
+            System.out.println("Stack kosong! Tidak ada tugas untuk dinilai.");
             return null;
         }
     }
