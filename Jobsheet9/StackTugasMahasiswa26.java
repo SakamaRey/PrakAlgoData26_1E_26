@@ -37,12 +37,12 @@ public class StackTugasMahasiswa26 {
     }
 
     public Mahasiswa26 pop() {
-        if (isEmpty()) {
+        if (!isEmpty()) {
             Mahasiswa26 m = stack[top];
             top--;
             return m;
         } else {
-            System.out.println("Stack ksoosng! Tidak ada tugas untuk dinilai.");
+            System.out.println("Stack kosong! Tidak ada tugas untuk dinilai.");
             return null;
         }
     }
@@ -80,5 +80,19 @@ public class StackTugasMahasiswa26 {
     // Jawaban Soal no 5
     public int getJumlahTugas() {
         return top + 1;
+    }
+
+    public String konversiDesimalKeBiner(int nilai) {
+        StackKonversi26 stack = new StackKonversi26();
+        while (nilai > 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 }
