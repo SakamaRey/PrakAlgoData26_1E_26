@@ -26,6 +26,5 @@ Soal :
 <img width="523" height="78" alt="image" src="https://github.com/user-attachments/assets/574f1edf-3780-4583-a7f6-184ee4f04c7a" />
 
 Jawaban :
-1. Method ini bekerja dengan konsep pembagian berulang sisa hasil bagi. Untuk mendapatkan sisa baginya (0 atau 1), dan sisa tersebut di-push
-   ke dalam objek StackKonversi26. Kemudian angka desimal dibagi 2, berulang selama nilai desimal > 0. Setelah perulangan selesai, data dikeluarkan
-   (di-pop) dari stack.
+1. Method ini bekerja dengan konsep pembagian berulang sisa hasil bagi. Untuk mendapatkan sisa baginya (0 atau 1), dan sisa tersebut di-pushke dalam objek StackKonversi26. Kemudian angka desimal dibagi 2, berulang selama nilai desimal >0.Setelah perulangan selesai, data dikeluarkan (di-pop) dari stack.
+2. Perubahan kondisi while menjadi != 0: Jika mengubah perulangan menjadi while (nilai != 0), hasilnya akan sama persis untuk bilangan bulat positif, karena angka akan terus menyusut hingga menjadi 0, mengakhiri perulangan.
