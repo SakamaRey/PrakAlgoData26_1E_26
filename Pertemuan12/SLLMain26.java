@@ -1,22 +1,49 @@
+
+import java.util.Scanner;
+
 public class SLLMain26 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         SingleLinkedList26 sll = new SingleLinkedList26();
+        
+        System.out.print("Masukkan jumlah mahasiswa : ");
+        int jumlah = sc.nextInt();
+        sc.nextLine();
 
-        Mahasiswa26 mhs1 = new Mahasiswa26("21212203", "Alvaro", "1A", 4.0);
-        Mahasiswa26 mhs2 = new Mahasiswa26("23212201", "Bamon", "2B", 3.0);
-        Mahasiswa26 mhs3 = new Mahasiswa26("22212202", "Cintia", "3C", 3.5);
-        Mahasiswa26 mhs4 = new Mahasiswa26("21212203", "Dirga", "4D", 3.6);
+        for (int i = 0; i < jumlah; i++) {
 
-        sll.print();
+            System.out.println("\nData Mahasiswa ke-" + (i + 1));
+            System.out.print("NIM   : ");
+            String nim = sc.nextLine();
+            System.out.print("Nama  : ");
+            String nama = sc.nextLine();
+            System.out.print("Kelas : ");
+            String kelas = sc.nextLine();
+            System.out.print("IPK   : ");
+            double ipk = sc.nextDouble();
+            sc.nextLine();
 
-        sll.addFirst(mhs4);
-        sll.print();
+            Mahasiswa26 mhs = new Mahasiswa26(nim,nama,kelas,ipk);
+            sll.addLast(mhs);
+        }
 
-        sll.addLast(mhs1);
-        sll.print();
-
-        sll.insertAfter("Dirga", mhs3);
-        sll.insertAt(2, mhs2);
+        System.out.println("\nData Linked List");
         sll.print();
     }
-}
+        // Mahasiswa26 mhs1 = new Mahasiswa26("21212203", "Alvaro", "1A", 4.0);
+        // Mahasiswa26 mhs2 = new Mahasiswa26("23212201", "Bamon", "2B", 3.0);
+        // Mahasiswa26 mhs3 = new Mahasiswa26("22212202", "Cintia", "3C", 3.5);
+        // Mahasiswa26 mhs4 = new Mahasiswa26("21212203", "Dirga", "4D", 3.6);
+
+        // sll.print();
+
+        // sll.addFirst(mhs4);
+        // sll.print();
+
+        // sll.addLast(mhs1);
+        // sll.print();
+
+        // sll.insertAfter("Dirga", mhs3);
+        // sll.insertAt(2, mhs2);
+        // sll.print();
+    }
