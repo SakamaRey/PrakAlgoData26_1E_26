@@ -21,3 +21,13 @@ Soal :
 Jawaban : 
 1. Karena setelah data ditemukan dan dihapus, proses pencarian tidak perlu dilanjutkan lagi. Jika tidak menggunakan break akan terjadi beberapa hal, yaitu : program tetap menelusuri node berikutnya, proses menjadi tidak efisien, berpotensi error jika node sudah berubah. Break digunakan untuk langsung keluar dari perulangan.
 2. Baris 1 digunakan untuk melewati node yang ingin dihapus. Baris 2 digunakan untuk memperbarui tail jika node yang dihapus adalah node terakhir. Karena setelah node terakhir dihapus, node sebelumnya menjadi tail baru.
+
+## Tugas
+Soal : 
+<img width="558" height="226" alt="image" src="https://github.com/user-attachments/assets/a0689594-4cd9-4846-846e-7e80d25cdcd7" />
+
+Jawaban : 
+<img width="587" height="972" alt="image" src="https://github.com/user-attachments/assets/318c2560-de37-42f4-9bd1-ab7694f9007f" />
+<img width="587" height="941" alt="image" src="https://github.com/user-attachments/assets/beb40c35-b0c2-4fb9-9e24-26f9c88f1b88" />
+<img width="588" height="952" alt="image" src="https://github.com/user-attachments/assets/b11329f6-a752-42da-a10f-002f8178eb05" />
+<img width="588" height="822" alt="image" src="https://github.com/user-attachments/assets/28280886-4d4f-4f9e-b21b-7bec8e027eeb" />
