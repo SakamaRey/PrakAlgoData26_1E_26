@@ -4,6 +4,8 @@ public class DoubleLinkedList26 {
     Node26 head;
     Node26 tail;
 
+    int size;
+
     public DoubleLinkedList26() {
         this.head = null;
         this.tail = null;
@@ -72,5 +74,50 @@ public class DoubleLinkedList26 {
             current.data.tampil();
             current = current.next;
         }
+    }
+
+    public void printReverse(){
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+
+        Node26 current = tail;
+        while (current != null) {
+            current.data.tampil();
+            current = current.prev;
+        }
+    }
+
+    public void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong");
+            return;
+        }
+        Mahasiswa26 deleteData = head.data;
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
+        size--;
+        System.out.println("Data yang dihapus: " + deleteData.nama);
+    }
+
+    public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Linked Link kosong.");
+            return;
+        }
+        Mahasiswa26 deletedData = tail.data;
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+        }
+        size--;
+        System.out.println("Data yang dihapus: " + deletedData.nama);
     }
 }
