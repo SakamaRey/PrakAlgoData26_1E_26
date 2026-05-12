@@ -3,12 +3,13 @@ package Jobsheet12;
 public class DoubleLinkedList26 {
     Node26 head;
     Node26 tail;
-
+    // Jawaban Tugas Praktikum No 5 : Atribut size
     int size;
 
     public DoubleLinkedList26() {
         this.head = null;
         this.tail = null;
+        size = 0;
     }
 
     public boolean isEmpty() {
@@ -23,6 +24,32 @@ public class DoubleLinkedList26 {
             newNode.next = head;
             head.prev = newNode;
             head = newNode;
+        }
+        size++;
+    }
+
+    // Jawaban Tugas Praktikum No 1: Method add(int index, Mahasiswa data)
+    public void add(int index, Mahasiswa26 data) {
+        if (index < 0 || index > size) {
+            System.out.println("Indeks di luar batas!");
+            return;
+        }
+        if (index == 0) {
+            addFirst(data);
+        } else if (index == size) {
+            // Asumsi method addLast sudah dideklarasikan dan melakukan size++
+            // list.addLast(data);
+        } else {
+            Node26 current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            Node26 newNode = new Node26(data);
+            newNode.prev = current.prev;
+            newNode.next = current;
+            current.prev.next = newNode;
+            current.prev = newNode;
+            size++;
         }
     }
 
@@ -48,7 +75,6 @@ public class DoubleLinkedList26 {
         }
 
         Node26 newNode = new Node26(data);
-
         // Jika current adalah tail, node baru ditambahkan di akhir
         if (current == tail) {
             newNode.prev = current;
@@ -61,6 +87,34 @@ public class DoubleLinkedList26 {
             current.next = newNode;
         }
         System.out.println("Data berhasil disisipkan setelah NIM " + keyNim);
+    }
+
+    // Jawaban Tugas Praktikum No 2: Method removeAfter()
+    public void removeAfter(String keyNim) {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong!");
+            return;
+        }
+        Node26 current = head;
+        while (current != null && !current.data.nim.equals(keyNim)) {
+            current = current.next;
+        }
+        
+        if (current == null || current.next == null) {
+            System.out.println("Node dengan NIM " + keyNim + 
+            " tidak ditemukan atau tidak ada node setelahnya.");
+            return;
+        }
+
+        Node26 toDelete = current.next;
+        current.next = toDelete.next;
+        if (toDelete.next != null) {
+            toDelete.next.prev = current;
+        } else {
+            tail = current; // Jika node yang dihapus adalah tail
+        }
+        size--;
+        System.out.println("Berhasil menghapus data setelah NIM: " + keyNim);
     }
 
     public void print(){
@@ -119,5 +173,63 @@ public class DoubleLinkedList26 {
         }
         size--;
         System.out.println("Data yang dihapus: " + deletedData.nama);
+    }
+
+    // Jawaban Tugas Praktikum No 3: Method remove(int index)
+    public void remove(int index) {
+        if (isEmpty() || index < 0 || index >= size) {
+            System.out.println("Indeks di luar batas atau List kosong!");
+            return;
+        }
+        if (index == 0) {
+            removeFirst();
+        } else if (index == size - 1) {
+            removeLast();
+        } else {
+            Node26 current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            current.prev.next = current.next;
+            current.next.prev = current.prev;
+            size--;
+            System.out.println("Data pada indeks " + index + " berhasil dihapus.");
+        }
+    }
+
+    // Jawaban Tugas Praktikum No 4a: Method getFirst()
+    public Mahasiswa26 getFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked List Kosong");
+            return null;
+        }
+        return head.data;
+    }
+
+    // Jawaban Tugas Praktikum No 4b: Method getLast()
+    public Mahasiswa26 getLast() {
+        if (isEmpty()) {
+            System.out.println("Linked List Kosong");
+            return null;
+        }
+        return tail.data;
+    }
+
+    // Jawaban Tugas Praktikum No 4c: Method getIndex()
+    public Mahasiswa26 getIndex(int index) {
+        if (isEmpty() || index < 0 || index >= size) {
+            System.out.println("Indeks di luar batas atau List kosong!");
+            return null;
+        }
+        Node26 current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.data;
+    }
+
+    // Jawaban Tugas Praktikum No 5: Method untuk mendapatkan jumlah data 
+    public int getSize() {
+        return size;
     }
 }
