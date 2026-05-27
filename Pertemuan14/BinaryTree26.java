@@ -164,4 +164,65 @@ public class BinaryTree26 {
             }
         }
     }
+
+    // Jawaban Tugas Praktikum Jbbsheet 14 Tree 
+    // 1. Method menambahkan node dengan cara rekursif
+    public void addRekursif(Mahasiswa26 mahasiswa) {
+        root = addRekursif(root, mahasiswa);
+    }
+    private Node26 addRekursif(Node26 current, Mahasiswa26 mahasiswa) {
+        if (current == null) {
+            return new Node26(mahasiswa);
+        }
+
+        if (mahasiswa.ipk < current.mahasiswa.ipk) {
+            current.left = addRekursif(current.left, mahasiswa);
+        } else if (mahasiswa.ipk > current.mahasiswa.ipk) {
+            current.right = addRekursif(current.right, mahasiswa);
+        }
+        return current;
+    }
+
+    // 2. Method mencari Mahasiswa dengan IPK terkecil dan terbesar
+    public void cariMinIPK() {
+        if (isEmpty()) {
+            System.out.println("Binary tree kosong");
+            return;
+        }
+        Node26 current = root;
+        while (current.left != null) { 
+            current = current.left;
+        }
+        System.out.println("Mahasiswa dengan IP terkecil :");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void cariMaxIPK() {
+        if (isEmpty()) {
+            System.out.println("Binary tree kosong");
+            return;
+        }
+        Node26 current = root;
+        while (current.right != null) { 
+            current = current.right;
+        }
+        System.out.println("Mahasiswa dengan IP terbesar :");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    // 3. Method menampilkan data mahasiswa dengan IPK di atas batas tertentu
+    public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        System.out.println("Daftar Mahasiswa dengan IPK di atas " + ipkBatas + ":");
+        tampilMahasiswaIPKdiAtas(root, ipkBatas);
+    }
+
+    private void tampilMahasiswaIPKdiAtas(Node26 node, double ipkBatas){
+        if (node != null) {
+            tampilMahasiswaIPKdiAtas(node.left, ipkBatas); // Traverse Kiri
+            if (node.mahasiswa.ipk > ipkBatas) {
+                node.mahasiswa.tampilInformasi(); // Cetak ketika memenuhi syarat
+            }
+            tampilMahasiswaIPKdiAtas(node.right, ipkBatas); // Traverse Kanan
+        }
+    }
 }

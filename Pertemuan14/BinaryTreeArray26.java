@@ -2,8 +2,10 @@ public class BinaryTreeArray26 {
     Mahasiswa26[] dataMahasiswa;
     int idxLast;
 
+    // 4. Penambahan Method add() dan traversePreOrder()
     public BinaryTreeArray26() {
         this.dataMahasiswa = new Mahasiswa26[10];
+        this.idxLast = -1;
     }
 
     void populateData(Mahasiswa26 dataMhs[], int idxLast) {
@@ -17,6 +19,25 @@ public class BinaryTreeArray26 {
                 traverseInOrder(2*idxStart+1);
                 dataMahasiswa[idxStart].tampilInformasi();
                 traverseInOrder(2*idxStart+2);
+            }
+        }
+    }
+
+    public void add(Mahasiswa26 data) {
+        if (idxLast + 1 < dataMahasiswa.length) {
+            idxLast++;
+            dataMahasiswa[idxLast] = data;
+        } else {
+            System.out.println("Array sudah penuh! Tidak dapat menambah data.");
+        }
+    }
+
+    void traversePreOrder(int idxStart) {
+        if (idxStart <= idxLast) {
+            if (dataMahasiswa[idxStart] != null) {
+                dataMahasiswa[idxStart].tampilInformasi();
+                traversePreOrder(2*idxStart+1);
+                traversePreOrder(2*idxStart+2);
             }
         }
     }
