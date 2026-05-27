@@ -20,3 +20,11 @@ Jawaban :
 ## 14.3 Implementasi Binary Tree dengan Array
 Soal : 
 <img width="530" height="157" alt="image" src="https://github.com/user-attachments/assets/e13e4f79-de73-445f-9ee0-8b28dd2e0de0" />
+
+Jawaban : 
+1. Atribut dataMahasiswa berupa array digunakan sebagai wadah untuk menyimpan objek data mahasiswa yang merepresentasikan node di dalam tree. Sedangkan idxLast berfungsi sebagai penanda indeks terakhir yang berisi elemen/node aktif di dalam array tersebut.
+2. Untuk menyalin atau memasukkan satu paket array data mahasiswa eksternal secara langsung ke dalam atribut array internal objek tree, sekaligus mendefinisikan batas indeks terakhirnya (idxLast).
+3. Untuk melakukan penelusuran dan menampilkan seluruh data mahasiswa di dalam tree secara berurutan (In-Order) dengan urutan pembacaan: Sub-pohon Kiri, Node Root (saat ini), lalu Sub-pohon Kanan.
+4. Left Child: 5 dan Right Child: 6
+5. Digunakan untuk menetapkan bahwa elemen pohon biner yang valid dan aktif di dalam array hanya diisi sampai indeks ke-6.
+6. Karena rumus tersebut merupakan representasi matematis standar untuk memetakan hubungan hierarki parent-child dari pohon biner lengkap ke dalam array linier berbasis indeks 0.
